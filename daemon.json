@@ -1,0 +1,8 @@
+{
+  "debug" : true,
+  "insecure-registries" : [
+    "192.168.65.1:15055",
+    "192.168.65.1:5000"
+  ],
+  "experimental" : true
+}
