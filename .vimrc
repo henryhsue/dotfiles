@@ -1,4 +1,4 @@
-execute pathogen#infect()
+"execute pathogen#infect()
 " ALL PLUGINS ARE FROM PATHOGEN INSTALLED TO ~/.vim/bundle"
 
 syntax enable
@@ -401,3 +401,6 @@ let g:neomake_open_list = 2
 let g:neomake_javascript_enabled_makers = ['eslint']
 " When writing a buffer (no delay).
 " call neomake#configure#automake('w')
+
+
+set ts=4 sw=4

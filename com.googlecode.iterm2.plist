@@ -11,15 +11,15 @@
 	<key>AppleWindowTabbingMode</key>
 	<string>manual</string>
 	<key>Default Bookmark Guid</key>
-	<string>3B872B54-1AA5-44BE-B4A6-DEBCE1A78724</string>
+	<string>C4B7E2F1-6B4C-4ACE-B2F1-838D7027FF45</string>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
-	<string>/Users</string>
+	<string>~/dotfiles</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
-	<string>{720, 448}</string>
+	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -51,14 +51,8 @@
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
-	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>410 363 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1553 486 796 473 1440 -258 1080 1897 </string>
-	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1440 -250 1074 1889 1440 -258 1080 1897 </string>
-	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1440 1187 570 452 1440 -258 1080 1897 </string>
+	<string>185 217 796 486 0 0 1280 777 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -352,7 +346,7 @@
 				<real>0.396078431372549</real>
 			</dict>
 			<key>Guid</key>
-			<string>3B872B54-1AA5-44BE-B4A6-DEBCE1A78724</string>
+			<string>C4B7E2F1-6B4C-4ACE-B2F1-838D7027FF45</string>
 			<key>Horizontal Spacing</key>
 			<real>1</real>
 			<key>Idle Code</key>
@@ -719,7 +713,7 @@
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Unlimited Scrollback</key>
-			<true/>
+			<false/>
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
@@ -735,23 +729,15 @@
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
-			<string>/Users/hhenry</string>
+			<string>/Users/henryhsue</string>
 		</dict>
 	</array>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>B0B6C717-640F-4F6B-B90D-D99781D0C232</string>
-	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
-	<true/>
-	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
-	<integer>0</integer>
-	<key>NoSyncPermissionToShowTip</key>
-	<false/>
+	<string>64D9670F-DBB6-45AE-A76E-861684DF07FA</string>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>550112586.71926796</real>
-	<key>PMPrintingExpandedStateForPrint2</key>
-	<false/>
+	<real>556872710.93442798</real>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -786,26 +772,22 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>~/work/uber-engi-dotfiles/hhenry</string>
-	<key>Print In Black And White</key>
-	<true/>
+	<string>/Users/henryhsue/dotfiles</string>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final.xml?shard=78</string>
+	<string>https://iterm2.com/appcasts/final.xml?shard=56</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-07-11T01:46:32Z</date>
+	<date>2018-08-25T06:51:51Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
-	<key>findMode_iTerm</key>
-	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.1.7</string>
+	<string>3.2.0</string>
 </dict>
 </plist>
