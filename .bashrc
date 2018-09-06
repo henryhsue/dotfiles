@@ -20,7 +20,7 @@ function g() { $(which grep) --color=always -s "$@"; }
 alias vim="nvim"
 alias m="make"
 alias mt="make test"
-alias new_session="sh ~/work/scripts/new_session.sh"
+alias new_session="sh ~/Personal/scripts/new_session.sh"
 alias lsof_listen="sudo lsof -PiTCP -sTCP:LISTEN"
 alias v='vim'
 alias vr='vim -R'
@@ -59,7 +59,7 @@ export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export PATH="$PATH:$GOPATH/bin"
 
 # git
-source ~/work/scripts/git-completion.bash
+source ~/personal/scripts/git-completion.bash
 alias glg='git log --oneline --graph --abbrev-commit --decorate --color'
 alias glgb='git log --oneline --graph --abbrev-commit --decorate --color --branches=*'
 alias gsl='git shortlog -s -n --all --no-merges'
@@ -112,7 +112,7 @@ else
     }
 
     #productivity
-    source ~/work/scripts/z/z.sh
+    source ~/personal/scripts/z/z.sh
 fi
 
 # custom prompt
