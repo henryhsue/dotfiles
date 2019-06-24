@@ -402,5 +402,6 @@ let g:neomake_javascript_enabled_makers = ['eslint']
 " When writing a buffer (no delay).
 " call neomake#configure#automake('w')
 
-
+"""""""""neovim""""""""""
+"need to set these again for some reason
 set ts=4 sw=4
