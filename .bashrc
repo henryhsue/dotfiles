@@ -1,7 +1,5 @@
-function is_production () {
-    local ENVFILE="/etc/uber/environment"
-    [ -f "$ENVFILE" ] && [ $(cat "$ENVFILE") = "production" ]
-}
+#z.sh
+source ~/personal/scripts/z/z.sh
 
 #tmux doesn't pick up new ssh-agent env vars
 fixssh() {
@@ -46,13 +44,6 @@ alias p='pwd'
 alias x='xargs'
 alias xg='xargs grep --color=always -s'
 
-# oncall
-function rtapi() { find ~/uber/realtime-api/endpoints -type f | egrep "spec.json" | grep -v test | xargs grep -l $1 | xargs cat | jq "{endpoint: .\"$1\"}"; }
-alias rtapi_all='find /Users/henryhsue/uber/realtime-api/endpoints -type f | egrep "index.js|spec.json" | grep -v test'
-
-# ldap
-export UBER_LDAP_UID="hhenry"
-
 # golang
 export GOPATH=$HOME/work/repos/gocode
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
@@ -65,9 +56,6 @@ alias glgb='git log --oneline --graph --abbrev-commit --decorate --color --branc
 alias gsl='git shortlog -s -n --all --no-merges'
 # clean up git pager's output 
 export LESS=R
-
-# clusto
-#export PYTHONPATH+=~/Uber/clustoclient
 
 # Unlimited history 
 HISTSIZE= HISTFILESIZE=
@@ -84,60 +72,12 @@ export HISTTIMEFORMAT="%d/%m/%y %T "
 export AUTOSSH_PORT=0
 export AUTOSSH_POLL=1
 
-
-if is_production; then
-    alias ci="clusto info"
-    alias cas="clusto attr show"
-    alias cps="clusto pool show"
-    alias lo="loony"
-    alias gg="git log --graph --abbrev-commit --decorate --date=relative --all"
-else
-    # added by newengsetup
-    export EDITOR=vim
-    export UBER_HOME="$HOME/Uber"
-    export UBER_OWNER="hhenry@uber.com"
-    export VAGRANT_DEFAULT_PROVIDER=aws
-    export PATH="$HOME/bin:$PATH"
-    if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-    #boxer
-    cdsync () {
-        cd $(boxer sync_dir $@)
-    }
-    editsync () {
-        $EDITOR $(boxer sync_dir $@)
-    }
-    opensync () {
-        open $(boxer sync_dir $@)
-    }
-
-    #productivity
-    source ~/personal/scripts/z/z.sh
-fi
-
-# custom prompt
-#if is_production; then
-#  PROMPT_COLOR="\[\033[1;35m\]"
-#else
-#  PROMPT_COLOR="\[\033[1;32m\]"
-#fi
-#too long!
-#PS1="${PROMPT_COLOR}\u@\h \[\033[1;34m\]\w"'$(__git_ps1 " \[\e[1;33m\](%s)\[\e[0;39m\] ")'"\[\033[1;35m\]\$\[\033[0m\] "
-#shorter:
-#PS1="${PROMPT_COLOR}"'./${PWD#"${PWD%/*}/"}''$(__git_ps1 "\[\e[1;33m\](%s)\[\e[0;39m\]")'"\[\033[1;35m\]\$\[\033[0m\] "
-#export PS1="\e[0;32m\h:\W \u \$\e[m "
 export PS1="\$ "
 
-#recycle
-#export PATH="$( pwd )/vendor/bin:${PATH}"
-
-
-# portal-web
-#export NVM_DIR="$HOME/.nvm"
-#. "/usr/local/opt/nvm/nvm.sh"
 
 #homebrew
 export PATH="/usr/local/sbin:$PATH"
 
-#ldap
-export UBER_LDAP_UID=hhenry
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
