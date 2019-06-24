@@ -107,33 +107,6 @@
 
 [http]
     followRedirects = true
-
-################# from uber ###############
-[url "ssh://gitolite@code.uber.internal/"]
-	insteadOf = git://code.uber.internal/
-
-[url "ssh://git@github.com/uber/"]
-	insteadOf = https://github.com/uber/
-
-[core]
-	excludesfile = ~/.gitignore
-
-[url "ssh://gitolite@code.uber.internal:2222/"]
-	insteadOf = https://code.uber.internal/
-
-[url "ssh://code.uber.internal/"]
-	insteadOf = https://code.uber.internal/
-
-[url "ssh://config.uber.internal/"]
-	insteadOf = https://config.uber.internal/
-
-[http "https://gopkg.uberinternal.com"]
-	followRedirects = true
-
-[http "https://gopkg.in"]
-	followRedirects = true
 [user]
 	name = Henry Hsue
-	email = hhenry@uber.com
-[pager]
-	branch = false
+	email = hhsue@berkeley.edu
