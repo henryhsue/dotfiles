@@ -1,7 +1,19 @@
-" Pathogen {{{1
-execute pathogen#infect()
-" ALL PLUGINS ARE FROM PATHOGEN INSTALLED TO ~/.vim/bundle"
+" Vim-Plug {{{1
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
 
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'fatih/vim-go'
+Plug 'scrooloose/syntastic'
+Plug 'altercation/vim-colors-solarized'
+Plug 'tpope/vim-fugitive'
+Plug 'valloric/youcompleteme'
+
+" Make sure you use single quotes
+" Initialize plugin system
+call plug#end()
 " Custom {{{1
 
 " folding for vimrc
@@ -178,5 +190,6 @@ let g:go_metalinter_autosave = 1
 " golang lint
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 "autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
-" FOLDING FOR VIMRC. LEAVE AT END OF VIMRC {{{1
+
+" FOLDING FOR VIMRC. LEAVE AT LAST LINE OF VIMRC {{{1
 " vim:foldmethod=marker:foldlevel=0
