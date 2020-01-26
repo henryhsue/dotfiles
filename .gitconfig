@@ -81,7 +81,7 @@
     compubrd = !git checkout master && git pull && git branch -d
     pub = !git push -u origin $(basename $(git symbolic-ref HEAD))
     phub = !git push -u origin $(basename $(git symbolic-ref HEAD)) && hub pull-request create
-    uewu = config user.email jcorbin@wunjo.org
+    uewu = config user.email 33713116+henryhsue@users.noreply.github.com
     mrg = merge --no-ff --no-edit
     detachat = !git checkout $(git rev-parse HEAD)
     mergeto = !git checkout $1 && git merge HEAD@{1}
@@ -109,4 +109,4 @@
     followRedirects = true
 [user]
 	name = Henry Hsue
-	email = hhsue@berkeley.edu
+	email = 33713116+henryhsue@users.noreply.github.com

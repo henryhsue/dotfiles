@@ -1,13 +1,13 @@
 source ~/.bashrc
-brew analytics off 2>&1 >/dev/null
+#brew analytics off 2>&1 >/dev/null
 export HOMEBREW_NO_SANDBOX=1
 export PATH="/usr/local/sbin:$PATH"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/henryhsue/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/Users/henryhsue/Downloads/google-cloud-sdk/path.bash.inc'; fi
+#if [ -f '/Users/henryhsue/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/Users/henryhsue/Downloads/google-cloud-sdk/path.bash.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/henryhsue/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/henryhsue/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+#if [ -f '/Users/henryhsue/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/henryhsue/Downloads/google-cloud-sdk/completion.bash.inc'; fi
 # added by Anaconda3 2018.12 installer
 # >>> conda init >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -24,3 +24,6 @@ else
 fi
 unset __conda_setup
 # <<< conda init <<<
+
+# golang
+export GOPATH=$HOME/Work/go

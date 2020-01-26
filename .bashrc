@@ -1,4 +1,3 @@
-#z.sh
 source ~/personal/scripts/z/z.sh
 
 #tmux doesn't pick up new ssh-agent env vars
@@ -78,6 +77,9 @@ export PS1="\$ "
 #homebrew
 export PATH="/usr/local/sbin:$PATH"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# silence Catalina zsh declaration
+export BASH_SILENCE_DEPRECATION_WARNING=1
