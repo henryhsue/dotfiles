@@ -9,7 +9,7 @@ Plug 'fatih/vim-go'
 Plug 'scrooloose/syntastic'
 Plug 'altercation/vim-colors-solarized'
 Plug 'tpope/vim-fugitive'
-Plug 'valloric/youcompleteme'
+" Plug 'valloric/youcompleteme'
 
 " Make sure you use single quotes
 " Initialize plugin system
