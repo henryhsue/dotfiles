@@ -1,10 +1,12 @@
-```
-do not git checkout in this directory without first saving changes
-this directory contains original files linked to from ~/. 
-keep hhenry/.vimrc smaller for remotes
+My dotfiles:
 
-ln -f -s ~/Personal/dotfiles/.profile ~/.profile
-ln -f -s ~/Personal/dotfiles/.vimrc ~/.vimrc
-ln -f -s ~/Personal/dotfiles/.tmux.conf ~/.tmux.conf
-ln -f -s ~/Personal/dotfiles/.gitconfig ~/.gitconfig
+* do not git checkout in this directory without first saving changes
+* this directory contains original files linked to from ~/. 
+* keep hhenry/.vimrc smaller for remotes
+
+Requirements when starting on a new machine:
+
+```
+mkdir -p ~/Personal
+mkdir -p ~/Work
 ```
