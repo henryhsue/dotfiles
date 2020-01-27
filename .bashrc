@@ -1,18 +1,5 @@
 source ~/personal/scripts/z/z.sh
 
-#tmux doesn't pick up new ssh-agent env vars
-fixssh() {
-  for key in SSH_AUTH_SOCK SSH_CONNECTION SSH_CLIENT; do
-    if (tmux show-environment | grep "^${key}" > /dev/null); then
-      value=`tmux show-environment | grep "^${key}" | sed -e "s/^[A-Z_]*=//"`
-      export ${key}="${value}"
-    fi
-  done
-}
-
-# pipe compatible overrides
-function g() { $(which grep) --color=always -s "$@"; }
-
 # aliases
 alias vim="nvim"
 alias m="make"
@@ -44,8 +31,7 @@ alias x='xargs'
 alias xg='xargs grep --color=always -s'
 
 # golang
-export GOPATH=$HOME/work/repos/gocode
-export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export GOPATH=$HOME/Work/go
 export PATH="$PATH:$GOPATH/bin"
 
 # git
@@ -71,15 +57,8 @@ export HISTTIMEFORMAT="%d/%m/%y %T "
 export AUTOSSH_PORT=0
 export AUTOSSH_POLL=1
 
-export PS1="\$ "
-
-
 #homebrew
 export PATH="/usr/local/sbin:$PATH"
-
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # silence Catalina zsh declaration
 export BASH_SILENCE_DEPRECATION_WARNING=1
