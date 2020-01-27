@@ -3,6 +3,7 @@ ln -f -s ~/Personal/dotfiles/.profile ~/.profile
 ln -f -s ~/Personal/dotfiles/.vimrc ~/.vimrc
 ln -f -s ~/Personal/dotfiles/.tmux.conf ~/.tmux.conf
 ln -f -s ~/Personal/dotfiles/.gitconfig ~/.gitconfig
+ln -f -s ~/Personal/dotfiles/.zshrc ~/.zshrc
 
 # install everything in Brewfile using Homebrew and Cask
 brew bundle
