@@ -1,10 +1,9 @@
-source ~/personal/scripts/z/z.sh
+source /Users/henryhsue/Personal/zsh-z/zsh-z.plugin.zsh
 
 # aliases
 alias vim="nvim"
 alias m="make"
 alias mt="make test"
-alias new_session="sh ~/Personal/scripts/new_session.sh"
 alias lsof_listen="sudo lsof -PiTCP -sTCP:LISTEN"
 alias v='vim'
 alias vr='vim -R'
@@ -35,19 +34,14 @@ export GOPATH=$HOME/Work/go
 export PATH="$PATH:$GOPATH/bin"
 
 # git
-source ~/personal/scripts/git-completion.bash
 alias glg='git log --oneline --graph --abbrev-commit --decorate --color'
 alias glgb='git log --oneline --graph --abbrev-commit --decorate --color --branches=*'
 alias gsl='git shortlog -s -n --all --no-merges'
 # clean up git pager's output 
 export LESS=R
 
-# Unlimited history 
-HISTSIZE= HISTFILESIZE=
 # Avoid duplicates
 export HISTCONTROL=ignoredups:erasedups  
-# When the shell exits, append to the history file instead of overwriting it
-shopt -s histappend
 # After each command, append to the history file and reread it
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a" #; history -c; history -r"
 # apply timestamp everytime

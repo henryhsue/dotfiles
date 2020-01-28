@@ -6,10 +6,15 @@ ln -f -s ~/Personal/dotfiles/.gitconfig ~/.gitconfig
 ln -f -s ~/Personal/dotfiles/.zshrc ~/.zshrc
 
 # install everything in Brewfile using Homebrew and Cask
-brew bundle
+# brew bundle
 
 # zsh
 chsh -s $(which zsh)
 
 # ohmyzsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
+# vim
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+vim -c PlugInstall
