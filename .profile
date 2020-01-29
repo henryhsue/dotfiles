@@ -56,3 +56,7 @@ export PATH="/usr/local/sbin:$PATH"
 
 # silence Catalina zsh declaration
 export BASH_SILENCE_DEPRECATION_WARNING=1
+
+# default editor, for git, etc...
+export VISUAL=vim
+export EDITOR="$VISUAL"

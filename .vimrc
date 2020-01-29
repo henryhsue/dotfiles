@@ -24,7 +24,7 @@ set modelines=1
 " syntax highlighting
 syntax enable
 set background=light
-" colorscheme solarized
+colorscheme solarized
 
 "quick save with leader key 
 noremap <Leader>s :update<CR>
