@@ -107,6 +107,11 @@
 
 [http]
     followRedirects = true
+
+[url "git@github.com:"]
+    insteadOf = https://github.com/
+
+
 [user]
-	name = Henry Hsue
 	email = 33713116+henryhsue@users.noreply.github.com
+	name = Henry
