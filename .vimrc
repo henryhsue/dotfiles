@@ -9,6 +9,7 @@ Plug 'fatih/vim-go'
 Plug 'scrooloose/syntastic'
 Plug 'altercation/vim-colors-solarized'
 Plug 'tpope/vim-fugitive'
+Plug 'tmux-plugins/vim-tmux-focus-events'
 " Plug 'valloric/youcompleteme'
 
 " Make sure you use single quotes
@@ -17,8 +18,8 @@ call plug#end()
 " Custom {{{1
 
 " folding for vimrc
-set foldmethod=marker
-set foldlevel=0
+set foldmethod=syntax
+set foldlevel=99
 set modelines=1
 
 " syntax highlighting
@@ -32,10 +33,6 @@ noremap <Leader>s :update<CR>
 " capitol w does lowercase w
 command! W w
 
-" Enable folding
-set foldmethod=indent
-set foldlevel=99
-
 " Enable folding with the spacebar
 nnoremap <space> za
 
@@ -45,7 +42,15 @@ let g:SimpylFold_docstring_preview=1
 " etf8
 set encoding=utf-8
 
-" Recommended Options {{{1
+" auto reload the file. If using tmux, see:
+" https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
+au CursorHold,CursorHoldI * checktime
+
+" how many seconds to wait after cursorhold to checktime for updates
+set updatetime=250
+
+
+" Generally Recommended Defaults {{{1
 "
 " These options and commands enable some very useful features in Vim, that
 " no user should have to live without.
@@ -168,7 +173,7 @@ xnoremap p pgvy
 "
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlPMRU'
+let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
@@ -188,7 +193,32 @@ let g:go_metalinter_autosave = 1
 
 " golang lint
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
-"autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
+" autolint?
+" autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
+
+" highlight function and method names
+let g:go_highlight_functions = 1
+
+" vim-go guru
+noremap <Leader>i :GoImplements<CR>
+noremap <Leader>c :GoCallees<CR>
+noremap <Leader>r :GoReferrers<CR>
+
+" no wrap for golang
+augroup WrapLineInTeXFile
+    autocmd!
+    autocmd FileType go setlocal nowrap
+augroup END
+
+
+" stop autolinter
+let g:go_metalinter_autosave = 0
+
+
+" load vimrc to any window that writes to a file
+autocmd BufWritePost .vimrc,_vimrc source $MYVIMRC
+
+
 
 " FOLDING FOR VIMRC. LEAVE AT LAST LINE OF VIMRC {{{1
 " vim:foldmethod=marker:foldlevel=0
