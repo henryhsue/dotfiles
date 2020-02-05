@@ -78,7 +78,7 @@
     rst = reset --hard
     st = status --short --branch
     suri = submodule update --recursive --init
-    uewu = config user.email jcorbin@wunjo.org
+    uewu = config user.email 33713116+henryhsue@users.noreply.github.com
     mrg = merge --no-edit --no-ff
     mark = commit -m mark --allow-empty
     fp = merge-base --fork-point
@@ -110,7 +110,7 @@
 
 [user]
 	email = 33713116+henryhsue@users.noreply.github.com
-	name = Henry
+	name = Henry Hsue
 
 [core]
     editor = nvim
