@@ -10,3 +10,9 @@ Requirements when starting on a new machine:
 mkdir -p ~/Personal
 mkdir -p ~/Work
 ```
+
+Note: to remove ssh default, must remove the following from global ~/.gitconfig temporarily. There probably exists a better solution somewhere.
+
+```
+url.git@github.com:.insteadof https://github.com/
+```
