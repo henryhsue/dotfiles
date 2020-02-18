@@ -10,7 +10,11 @@ Plug 'scrooloose/syntastic'
 Plug 'altercation/vim-colors-solarized'
 Plug 'tpope/vim-fugitive'
 Plug 'tmux-plugins/vim-tmux-focus-events'
-" Plug 'valloric/youcompleteme'
+" YCM REQUIRES: python3 -m pip install --user --upgrade pynvim
+Plug 'valloric/youcompleteme'
+Plug 'majutsushi/tagbar'
+Plug 'mileszs/ack.vim'
+
 
 " Make sure you use single quotes
 " Initialize plugin system
@@ -186,6 +190,20 @@ let g:ctrlp_custom_ignore = {
 let g:ctrlp_open_multiple_files = '10i'
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:20'
 
+" use current path to preppopulate
+let g:ctrlp_working_path_mode = 'r'
+
+" let g:ctrlp_user_command = 'find %s -type f -name "*.go"'
+" use ripgrep for searching
+if executable('rg')
+    let g:ctrlp_user_command = 'rg . ./vendor/github.com/quibitv/ --files --color=never --glob "*.go"'
+endif
+
+" if executable('rg')
+"     let g:ctrlp_user_command = 'rg ./search/ ./vendor/github.com/quibitv/search/ --files --color=never --glob "*.go"'
+" endif
+
+
 " Golang {{{1
 " goimports
 let g:go_fmt_command = "goimports"
@@ -203,6 +221,7 @@ let g:go_highlight_functions = 1
 noremap <Leader>i :GoImplements<CR>
 noremap <Leader>c :GoCallees<CR>
 noremap <Leader>r :GoReferrers<CR>
+noremap <Leader>z :GoAlternate<CR>
 
 " no wrap for golang
 augroup WrapLineInTeXFile
@@ -218,6 +237,29 @@ let g:go_metalinter_autosave = 0
 " load vimrc to any window that writes to a file
 autocmd BufWritePost .vimrc,_vimrc source $MYVIMRC
 
+" use gopls language server protocol for godef
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+
+" default scope for godef
+"let g:go_guru_scope = ["."]
+
+
+" YCM and tags {{{1
+
+" map \jd to GoTo
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
+
+" map \t to toggle tagbar
+nmap <leader>t :TagbarToggle<CR>
+
+" ack.vim {{{1
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+cnoreabbrev Ack Ack!
+nnoremap <Leader>a :Ack!<Space>
 
 
 " FOLDING FOR VIMRC. LEAVE AT LAST LINE OF VIMRC {{{1
