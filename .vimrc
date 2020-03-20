@@ -14,11 +14,14 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'valloric/youcompleteme'
 Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'
-
+Plug 'SirVer/ultisnips'
+Plug 'ervandew/supertab'
+Plug 'preservim/nerdtree'
 
 " Make sure you use single quotes
 " Initialize plugin system
 call plug#end()
+
 " Custom {{{1
 
 " folding for vimrc
@@ -210,7 +213,7 @@ let g:go_fmt_command = "goimports"
 let g:go_metalinter_autosave = 1
 
 " golang lint
-set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
+" set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 " autolint?
 " autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 
@@ -244,7 +247,6 @@ let g:go_info_mode='gopls'
 " default scope for godef
 "let g:go_guru_scope = ["."]
 
-
 " YCM and tags {{{1
 
 " map \jd to GoTo
@@ -253,6 +255,8 @@ nnoremap <leader>jd :YcmCompleter GoTo<CR>
 " map \t to toggle tagbar
 nmap <leader>t :TagbarToggle<CR>
 
+" turn ycm off
+let g:ycm_show_diagnostics_ui = 1
 " ack.vim {{{1
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
@@ -261,6 +265,23 @@ endif
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
 
+" fugitive {{{1
+nnoremap <Leader>g :Gblame<Return>
+
+" Utlisnips + YCM {{{1
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+" NerdTree {{{1
+map <C-n> :NERDTreeToggle<CR>
 
 " FOLDING FOR VIMRC. LEAVE AT LAST LINE OF VIMRC {{{1
 " vim:foldmethod=marker:foldlevel=0
