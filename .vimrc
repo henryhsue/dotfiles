@@ -56,6 +56,9 @@ au CursorHold,CursorHoldI * checktime
 " how many seconds to wait after cursorhold to checktime for updates
 set updatetime=250
 
+" do not require saving when changing buffers
+set hidden
+
 
 " Generally Recommended Defaults {{{1
 "
