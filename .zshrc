@@ -1,8 +1,8 @@
-# use z.sh
-source ~/personal/scripts/z/z.sh
-
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# add bashrc/profile
+source ~/.profile
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/henryhsue/.oh-my-zsh"
@@ -100,3 +100,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+
+# do not share history across shell instances
+unsetopt share_history
+
+# add timestamp to prompt
+PROMPT='%{$fg[yellow]%}[%D{%f/%m/%y} %D{%L:%M:%S}] '$PROMPT
