@@ -1,5 +1,60 @@
 {
-  "auths" : {
-
-  }
+    "username": "henryhsue",
+    "selfcontrol-path": "/Applications/SelfControl.app",
+    "host-blacklist": [
+        "youtube.com",
+        "reddit.com",
+        "facebook.com"
+    ],
+    "block-schedules":[
+        {
+            "weekday": 1,
+            "start-hour": 8,
+            "start-minute": 0,
+            "end-hour": 23,
+            "end-minute": 59
+        },
+        {
+            "weekday": 2,
+            "start-hour": 8,
+            "start-minute": 0,
+            "end-hour": 23,
+            "end-minute": 59
+        },
+        {
+            "weekday": 3,
+            "start-hour": 8,
+            "start-minute": 0,
+            "end-hour": 23,
+            "end-minute": 59
+        },
+        {
+            "weekday": 4,
+            "start-hour": 8,
+            "start-minute": 0,
+            "end-hour": 23,
+            "end-minute": 59
+        },
+        {
+            "weekday": 5,
+            "start-hour": 8,
+            "start-minute": 0,
+            "end-hour": 23,
+            "end-minute": 59
+        },
+        {
+            "weekday": 6,
+            "start-hour": 8,
+            "start-minute": 0,
+            "end-hour": 23,
+            "end-minute": 59
+        },
+        {
+            "weekday": 7,
+            "start-hour": 8,
+            "start-minute": 0,
+            "end-hour": 23,
+            "end-minute": 59
+        }
+    ]
 }
