@@ -6,61 +6,23 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fatih/vim-go'
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
 Plug 'altercation/vim-colors-solarized'
 Plug 'tpope/vim-fugitive'
-Plug 'tmux-plugins/vim-tmux-focus-events'
+" Plug 'tmux-plugins/vim-tmux-focus-events'
 " YCM REQUIRES: python3 -m pip install --user --upgrade pynvim
-Plug 'valloric/youcompleteme'
+" Plug 'valloric/youcompleteme'
 Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'
-Plug 'SirVer/ultisnips'
-Plug 'ervandew/supertab'
+" Plug 'SirVer/ultisnips'
+" Plug 'ervandew/supertab'
 Plug 'preservim/nerdtree'
 
 " Make sure you use single quotes
 " Initialize plugin system
 call plug#end()
 
-" Custom {{{1
-
-" folding for vimrc
-set foldmethod=syntax
-set foldlevel=99
-set modelines=1
-
-" syntax highlighting
-syntax enable
-set background=light
-colorscheme solarized
-
-"quick save with leader key 
-noremap <Leader>s :update<CR>
-
-" capitol w does lowercase w
-command! W w
-
-" Enable folding with the spacebar
-nnoremap <space> za
-
-" Docstrings for folded code
-let g:SimpylFold_docstring_preview=1
-
-" etf8
-set encoding=utf-8
-
-" auto reload the file. If using tmux, see:
-" https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
-au CursorHold,CursorHoldI * checktime
-
-" how many seconds to wait after cursorhold to checktime for updates
-set updatetime=250
-
-" do not require saving when changing buffers
-set hidden
-
-
-" Generally Recommended Defaults {{{1
+" General: Recommended Defaults {{{1
 "
 " These options and commands enable some very useful features in Vim, that
 " no user should have to live without.
@@ -94,7 +56,8 @@ set showcmd
  
  
 "------------------------------------------------------------
-" Usability options {{{1
+
+" General: Usability options {{{1
 "
 " These are options that users frequently set in their .vimrc. Some of them
 " change Vim's behaviour in ways which deviate from the true Vi way, but
@@ -154,7 +117,7 @@ set pastetoggle=<F11>
  
  
 "------------------------------------------------------------
-" Indentation options {{{1
+" General: Indentation options {{{1
 "
 " Indentation settings according to personal preference.
  
@@ -168,8 +131,8 @@ set expandtab
 " four characters wide.
 set tabstop=4
  
-" Copy Paste {{{1
-"
+" General: Copy Paste {{{1
+" copy and paste to osx pastebuffer
 vnoremap \y y:call system("pbcopy", getreg("\""))<CR>
 nnoremap \p :call setreg("\"", system("pbpaste"))<CR>p
 noremap YY "+y<CR>
@@ -178,6 +141,44 @@ noremap XX "+x<CR>
 
 " paste multiple times
 xnoremap p pgvy
+
+" General: Other/Personal {{{1
+
+" folding for vimrc
+set foldmethod=syntax
+set foldlevel=99
+set modelines=1
+
+" syntax highlighting
+syntax enable
+set background=light
+colorscheme solarized
+
+"quick save with leader key 
+noremap <Leader>s :update<CR>
+
+" capitol w does lowercase w
+command! W w
+
+" Enable folding with the spacebar
+nnoremap <space> za
+
+" Docstrings for folded code
+let g:SimpylFold_docstring_preview=1
+
+" etf8
+set encoding=utf-8
+
+" auto reload the file. If using tmux, see:
+" https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
+au CursorHold,CursorHoldI * checktime
+
+" how many seconds to wait after cursorhold to checktime for updates
+set updatetime=250
+
+" do not require saving when changing buffers
+set hidden
+
 
 " ctrlp {{{1
 "
@@ -200,28 +201,21 @@ let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:20'
 let g:ctrlp_working_path_mode = 'r'
 
 " let g:ctrlp_user_command = 'find %s -type f -name "*.go"'
-" use ripgrep for searching
+" use ripgrep for populating files
 if executable('rg')
     let g:ctrlp_user_command = 'rg . ./vendor/github.com/quibitv/ --files --color=never --glob "*.go"'
 endif
 
-" if executable('rg')
-"     let g:ctrlp_user_command = 'rg ./search/ ./vendor/github.com/quibitv/search/ --files --color=never --glob "*.go"'
-" endif
-
+let g:ctrlp_by_filename = 1
 
 " Golang {{{1
 " goimports
 let g:go_fmt_command = "goimports"
-let g:go_metalinter_autosave = 1
-
-" golang lint
-" set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
-" autolint?
-" autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 
 " highlight function and method names
 let g:go_highlight_functions = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
 
 " vim-go guru
 noremap <Leader>i :GoImplements<CR>
@@ -235,31 +229,28 @@ augroup WrapLineInTeXFile
     autocmd FileType go setlocal nowrap
 augroup END
 
-
-" stop autolinter
+" enable autolinter
 let g:go_metalinter_autosave = 0
-
-
-" load vimrc to any window that writes to a file
-autocmd BufWritePost .vimrc,_vimrc source $MYVIMRC
 
 " use gopls language server protocol for godef
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
+let g:go_implements_mode = 'gopls'
 
-" default scope for godef
-"let g:go_guru_scope = ["."]
+" Syntastic doesn't play well with vim-go: https://github.com/fatih/vim-go/issues/144
+let g:syntastic_go_checkers = []
 
-" YCM and tags {{{1
+" location list is a quickfix list as well
+let g:go_list_type = "quickfix"
 
-" map \jd to GoTo
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
+" leader mappings for vim-go
+autocmd FileType go nmap <leader>r  <Plug>(go-test)
+autocmd FileType go nmap <leader>b  <Plug>(go-build)
+nnoremap <leader>q :cclose<CR>
+nnoremap <leader>o :cprev<CR>
+nnoremap <leader>p :cnext<CR>
+nnoremap <leader>d :GoDeclsDir<CR>
 
-" map \t to toggle tagbar
-nmap <leader>t :TagbarToggle<CR>
-
-" turn ycm off
-let g:ycm_show_diagnostics_ui = 1
 " ack.vim {{{1
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
@@ -274,17 +265,44 @@ nnoremap <Leader>g :Gblame<Return>
 " Utlisnips + YCM {{{1
 
 " make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
+" let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+" let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+" let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+" let g:UltiSnipsExpandTrigger = "<tab>"
+" let g:UltiSnipsJumpForwardTrigger = "<tab>"
+" let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
+" YCM and tags {{{1
+
+" map \jd to GoTo
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
+
+" map \t to toggle tagbar
+nmap <leader>t :TagbarToggle<CR>
+
+" turn ycm off
+let g:ycm_show_diagnostics_ui = 1
 " NerdTree {{{1
 map <C-n> :NERDTreeToggle<CR>
 
+" QuickFix Window {{{1
+" Auto-adjust quickfix window height
+au FileType qf call AdjustWindowHeight(3, 10)
+function! AdjustWindowHeight(minheight, maxheight)
+    let l = 1
+    let n_lines = 0
+    let w_width = winwidth(0)
+    while l <= line('$')
+        " number to float for division
+        let l_len = strlen(getline(l)) + 0.0
+        let line_width = l_len/w_width
+        let n_lines += float2nr(ceil(line_width))
+        let l += 1
+    endw
+    exe max([min([n_lines, a:maxheight]), a:minheight]) . "wincmd _"
+endfunction
+" https://gist.github.com/juanpabloaj/5845848
 " FOLDING FOR VIMRC. LEAVE AT LAST LINE OF VIMRC {{{1
 " vim:foldmethod=marker:foldlevel=0
