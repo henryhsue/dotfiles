@@ -16,3 +16,5 @@ Note: to remove ssh default, must remove the following from global ~/.gitconfig 
 ```
 url.git@github.com:.insteadof https://github.com/
 ```
+
+Note: using different gitconfig for work and personal
