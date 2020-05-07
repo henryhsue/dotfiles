@@ -185,7 +185,11 @@
 	<false/>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/Personal/dotfiles</string>
+	<key>NSNavLastUserSetHideExtensionButtonState</key>
+	<false/>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
+	<string>{712, 448}</string>
+	<key>NSNavPanelExpandedSizeForSaveMode</key>
 	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
@@ -233,13 +237,13 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>1610 922 620 392 1080 446 1680 1027 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
-	<string>127 443 592 584 0 0 1680 1027 </string>
+	<string>2168 756 592 584 1080 465 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1080 -397 1080 1897 -1080 -397 1080 1897 </string>
+	<string>-1080 1395 650 502 -1080 0 1080 1897 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>-1080 998 650 502 -1080 -397 1080 1897 </string>
+	<string>-1080 1357 650 502 -1080 0 1080 1897 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>-937 -141 650 502 -1080 -397 1080 1897 </string>
+	<string>-937 -122 650 479 -1080 -397 1080 1897 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1001,16 +1005,16 @@ asdf</string>
 	<key>NoSyncFrame_SessionsPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{-1080, -397}, {1080, 1920}}</string>
+		<string>{{-1080, 0}, {1080, 1920}}</string>
 		<key>topLeft</key>
-		<string>{-843, 1155}</string>
+		<string>{-1017, 889}</string>
 	</dict>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1680, 1050}}</string>
+		<string>{{-1080, 0}, {1080, 1920}}</string>
 		<key>topLeft</key>
-		<string>{734, 892}</string>
+		<string>{-1032, 1158}</string>
 	</dict>
 	<key>NoSyncHaveUsedCopyMode</key>
 	<true/>
@@ -1019,7 +1023,7 @@ asdf</string>
 	<key>NoSyncLastTipTime</key>
 	<real>607155664.498034</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>19</integer>
+	<integer>23</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1784,6 +1788,11 @@ asdf</string>
 			</dict>
 		</array>
 	</dict>
+	<key>NoSyncSavePanelSavedSettings_SaveProfile</key>
+	<dict>
+		<key>Initial Directory</key>
+		<string>/Users/henryhsue/Personal/dotfiles</string>
+	</dict>
 	<key>NoSyncSuppressCaptureOutputToolNotVisibleWarning</key>
 	<true/>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
@@ -1891,7 +1900,7 @@ asdf</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-03-29T22:51:59Z</date>
+	<date>2020-05-06T23:17:02Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -1935,7 +1944,7 @@ asdf</string>
 		<string>Recent Directories</string>
 	</array>
 	<key>UKCrashReporterLastCrashReportDate</key>
-	<real>1585543808</real>
+	<real>1588562944</real>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 	<key>WindowNumber</key>
