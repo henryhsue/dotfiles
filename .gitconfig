@@ -54,6 +54,8 @@
     co = checkout
     cp = cherry-pick
     dc = diff --cached
+    d = diff
+    dm = diff master
     doh = commit --amend --no-edit
     dohe = commit --amend --edit
     lg  = log --pretty=author

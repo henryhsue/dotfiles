@@ -34,6 +34,8 @@ export GOPATH=$HOME/Work/go
 export PATH="$PATH:$GOPATH/bin"
 
 # git
+alias galias="git config --get-regexp alias"
+alias g='git'
 alias glg='git log --oneline --graph --abbrev-commit --decorate --color'
 alias glgb='git log --oneline --graph --abbrev-commit --decorate --color --branches=*'
 alias gsl='git shortlog -s -n --all --no-merges'
