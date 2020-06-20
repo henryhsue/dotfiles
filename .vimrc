@@ -187,7 +187,8 @@ nnoremap <C-K> <C-W>k
 nnoremap <C-L> <C-W>l
 nnoremap <C-H> <C-W>h
 
-
+" side scroll by 20 characters
+set sidescroll=20
 
 " ctrlp {{{1
 "
@@ -439,6 +440,8 @@ nnoremap <Leader>a :Ack!<Space>
 " Fix colors for gutter bar on the left 
 highlight clear SignColumn
 
+" diff with master branch
+let g:gitgutter_diff_base = 'master'
 
 " fugitive {{{1
 nnoremap <Leader>g :Gblame<Return>

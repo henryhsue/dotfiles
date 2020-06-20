@@ -1,6 +1,7 @@
 source /Users/henryhsue/Personal/zsh-z/zsh-z.plugin.zsh
 
 # aliases
+alias vi="nvim"
 alias vim="nvim"
 alias m="make"
 alias mt="make test"
@@ -60,8 +61,7 @@ export PATH="/usr/local/sbin:$PATH"
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # default editor, for git, etc...
-export VISUAL=vim
-export EDITOR="$VISUAL"
+export EDITOR=nvim
 
 # work
 source ~/.work
