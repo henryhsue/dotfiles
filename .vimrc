@@ -15,6 +15,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Make sure you use single quotes
 " Initialize plugin system
@@ -450,10 +451,12 @@ nnoremap <Leader>g :Gblame<Return>
 " map \t to toggle tagbar
 nmap <leader>t :TagbarToggle<CR>
 
-" https://github.com/vim-airline/vim-airline/issues/1734
-" au User AirlineAfterInit let g:airline_section_x = airline#section#create_right(['tagbar'])
-
+" airline integration -- doesn't exactly work
 let g:airline#extensions#tagbar#enabled = 1
+
+" airline {{{1
+let g:airline_theme='solarized'
+
 
 " NerdTree {{{1
 map <C-n> :NERDTreeToggle<CR>
