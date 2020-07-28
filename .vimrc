@@ -9,13 +9,12 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'tpope/vim-fugitive'
 Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'
-" Plug 'SirVer/ultisnips'
-" Plug 'ervandew/supertab'
 Plug 'preservim/nerdtree'
 Plug 'fatih/vim-go'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
 
 " Make sure you use single quotes
 " Initialize plugin system
@@ -441,35 +440,31 @@ nnoremap <Leader>a :Ack!<Space>
 highlight clear SignColumn
 
 " diff with master branch
-let g:gitgutter_diff_base = 'master'
+let g:gitgutter_diff_base = 'main'
 
 " fugitive {{{1
 nnoremap <Leader>g :Gblame<Return>
 
-" Utlisnips + YCM {{{1
-
-" make YCM compatible with UltiSnips (using supertab)
-" let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-" let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-" let g:SuperTabDefaultCompletionType = '<C-n>'
-
-" better key bindings for UltiSnipsExpandTrigger
-" let g:UltiSnipsExpandTrigger = "<tab>"
-" let g:UltiSnipsJumpForwardTrigger = "<tab>"
-" let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-
-" YCM and tags {{{1
-
-" map \jd to GoTo
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
+" tagbar {{{1
 
 " map \t to toggle tagbar
 nmap <leader>t :TagbarToggle<CR>
 
-" turn ycm off
-let g:ycm_show_diagnostics_ui = 1
+" https://github.com/vim-airline/vim-airline/issues/1734
+" au User AirlineAfterInit let g:airline_section_x = airline#section#create_right(['tagbar'])
+
+let g:airline#extensions#tagbar#enabled = 1
+
 " NerdTree {{{1
 map <C-n> :NERDTreeToggle<CR>
+
+" golang-ci vim-go {{{1
+" Fix issue: https://github.com/fatih/vim-go/issues/2305
+let g:go_metalinter_command='golangci-lint run --print-issued-lines=false'
+nnoremap <Leader>l :GoMetaLinter<Return>
+
+" autorun GoMetaLinter
+let g:go_metalinter_autosave = 0
 
 " QuickFix Window {{{1
 " Auto-adjust quickfix window height

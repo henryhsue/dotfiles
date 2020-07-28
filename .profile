@@ -40,6 +40,7 @@ alias g='git'
 alias glg='git log --oneline --graph --abbrev-commit --decorate --color'
 alias glgb='git log --oneline --graph --abbrev-commit --decorate --color --branches=*'
 alias gsl='git shortlog -s -n --all --no-merges'
+alias gmru='git for-each-ref --sort=-committerdate refs/heads/ | head'
 # clean up git pager's output 
 export LESS=R
 
