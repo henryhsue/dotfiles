@@ -50,6 +50,9 @@ export HISTCONTROL=ignoredups:erasedups
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a" #; history -c; history -r"
 # apply timestamp everytime
 export HISTTIMEFORMAT="%d/%m/%y %T "
+export HISTSIZE=999999999
+export SAVEHIST=$HISTSIZE
+
 
 # autossh
 export AUTOSSH_PORT=0
@@ -66,3 +69,6 @@ export EDITOR=nvim
 
 # work
 source ~/.work
+
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"

@@ -7,7 +7,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'tpope/vim-fugitive'
-Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'
 Plug 'preservim/nerdtree'
 Plug 'fatih/vim-go'
@@ -16,6 +15,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'majutsushi/tagbar'
 
 " Make sure you use single quotes
 " Initialize plugin system
@@ -418,7 +418,7 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " " Search workspace symbols.
 " nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
 " " Do default action for next item.
-" nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+" nnoremap <silent> <C-j>  :<C-u>CocNext<CR>
 " " Do default action for previous item.
 " nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " " Resume latest coc list.
@@ -451,12 +451,42 @@ nnoremap <Leader>g :Gblame<Return>
 " map \t to toggle tagbar
 nmap <leader>t :TagbarToggle<CR>
 
+let g:tagbar_type_go = {
+	\ 'ctagstype' : 'go',
+	\ 'kinds'     : [
+		\ 'p:package',
+		\ 'i:imports:1',
+		\ 'c:constants',
+		\ 'v:variables',
+		\ 't:types',
+		\ 'n:interfaces',
+		\ 'w:fields',
+		\ 'e:embedded',
+		\ 'm:methods',
+		\ 'r:constructor',
+		\ 'f:functions'
+	\ ],
+	\ 'sro' : '.',
+	\ 'kind2scope' : {
+		\ 't' : 'ctype',
+		\ 'n' : 'ntype'
+	\ },
+	\ 'scope2kind' : {
+		\ 'ctype' : 't',
+		\ 'ntype' : 'n'
+	\ },
+	\ 'ctagsbin'  : 'gotags',
+	\ 'ctagsargs' : '-sort -silent'
+\ }
+
+
 " airline integration -- doesn't exactly work
 let g:airline#extensions#tagbar#enabled = 1
 
 " airline {{{1
 let g:airline_theme='solarized'
-
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
 " NerdTree {{{1
 map <C-n> :NERDTreeToggle<CR>
