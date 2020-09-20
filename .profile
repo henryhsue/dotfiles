@@ -1,5 +1,3 @@
-source /Users/henryhsue/Personal/zsh-z/zsh-z.plugin.zsh
-
 # aliases
 alias vi="nvim"
 alias vim="nvim"
@@ -66,6 +64,9 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # default editor, for git, etc...
 export EDITOR=nvim
+
+# z.sh from brew install
+. /usr/local/etc/profile.d/z.sh
 
 # work
 source ~/.work
