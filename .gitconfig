@@ -107,8 +107,8 @@
 [http]
     followRedirects = true
 
-[url "https://github"]
-  insteadOf = git://github
+#[url "https://github"]
+#  insteadOf = git://github
 
 [user]
 	email = 33713116+henryhsue@users.noreply.github.com
