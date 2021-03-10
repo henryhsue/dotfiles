@@ -69,4 +69,4 @@ export EDITOR=nvim
 . /usr/local/etc/profile.d/z.sh
 
 # work
-source ~/.work
+#source ~/.work
