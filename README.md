@@ -10,3 +10,5 @@ Requirements when starting on a new machine:
 mkdir -p ~/Personal
 mkdir -p ~/Work
 ```
+
+Set dotfiles in ~/Personal
