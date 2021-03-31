@@ -9,7 +9,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'tpope/vim-fugitive'
 Plug 'mileszs/ack.vim'
 Plug 'preservim/nerdtree'
-Plug 'fatih/vim-go'
+" Plug 'fatih/vim-go'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
@@ -212,9 +212,9 @@ let g:ctrlp_working_path_mode = 'r'
 
 " let g:ctrlp_user_command = 'find %s -type f -name "*.go"'
 " use ripgrep for populating files
-if executable('rg')
-    let g:ctrlp_user_command = 'rg . ./vendor/github.com/quibitv/ --files --color=never --glob "*.go"'
-endif
+" if executable('rg')
+"     let g:ctrlp_user_command = 'rg . ./vendor/github.com/quibitv/ --files --color=never --glob "*.go"'
+" endif
 
 " searches only the filename, not path.
 let g:ctrlp_by_filename = 0
@@ -257,11 +257,11 @@ nnoremap <leader>p :cnext<CR>
 nnoremap <leader>d :GoDeclsDir<CR>
 
 " guru scope
-autocmd BufRead ~/Work/go/src/github.com/quibitv/*.go
-      \  let s:tmp = matchlist(expand('%:p'),
-          \ '~/Work/go/src/\(github.com/quibitv/[^/]\+\)')
-      \| if len(s:tmp) > 1 |  exe 'silent :GoGuruScope ' . s:tmp[1] | endif
-      \| unlet s:tmp
+" autocmd BufRead ~/Work/go/src/github.com/quibitv/*.go
+"       \  let s:tmp = matchlist(expand('%:p'),
+"           \ '~/Work/go/src/\(github.com/quibitv/[^/]\+\)')
+"       \| if len(s:tmp) > 1 |  exe 'silent :GoGuruScope ' . s:tmp[1] | endif
+"       \| unlet s:tmp
 
 " vim-go guru
 noremap <Leader>i :GoImplements<CR>
