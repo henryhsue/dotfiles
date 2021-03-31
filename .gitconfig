@@ -107,6 +107,7 @@
 [http]
     followRedirects = true
 
+#only if https preferred or needed over ssh
 #[url "https://github"]
 #  insteadOf = git://github
 
