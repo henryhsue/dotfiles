@@ -67,6 +67,3 @@ export EDITOR=nvim
 
 # z.sh from brew install
 . /usr/local/etc/profile.d/z.sh
-
-# work
-#source ~/.work
