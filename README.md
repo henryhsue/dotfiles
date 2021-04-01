@@ -11,4 +11,9 @@ mkdir -p ~/Personal
 mkdir -p ~/Work
 ```
 
-Set dotfiles in ~/Personal
+Set /dotfiles in ~/Personal
+
+TODO:
+
+:GoInstallBinaries
+:CocInstall coc-go
