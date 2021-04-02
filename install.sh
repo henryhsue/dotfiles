@@ -8,8 +8,8 @@ cd ~/Personal/dotfiles
 # homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# Brewfile
-brew bundle Brewfile
+# install Brewfile in current dir
+brew bundle --no-lock
 
 # create dotfiles in home directory
 ln -f -s ~/Personal/dotfiles/.profile ~/.profile
@@ -17,7 +17,6 @@ ln -f -s ~/Personal/dotfiles/.vimrc ~/.vimrc
 ln -f -s ~/Personal/dotfiles/.tmux.conf ~/.tmux.conf
 ln -f -s ~/Personal/dotfiles/.gitconfig ~/.gitconfig
 ln -f -s ~/Personal/dotfiles/.zshrc ~/.zshrc # pulls bash .profile
-
 
 # installs homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
