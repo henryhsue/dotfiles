@@ -5,12 +5,6 @@ mkdir -p ~/Work
 # chdir
 cd ~/Personal/dotfiles
 
-# homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-# install Brewfile in current dir
-brew bundle --no-lock
-
 # create dotfiles in home directory
 ln -f -s ~/Personal/dotfiles/.profile ~/.profile
 ln -f -s ~/Personal/dotfiles/.vimrc ~/.vimrc
@@ -22,7 +16,7 @@ ln -f -s ~/Personal/dotfiles/.zshrc ~/.zshrc # pulls bash .profile
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # install everything in Brewfile using Homebrew and Cask. Installs neovim.
-brew bundle
+brew bundle --no-lock
 
 # zsh
 chsh -s $(which zsh)
