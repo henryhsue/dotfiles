@@ -116,3 +116,4 @@ complete -o nospace -C /usr/local/bin/terraform terraform
 
 # https://superuser.com/questions/902241/how-to-make-zsh-not-store-failed-command
 zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
+
